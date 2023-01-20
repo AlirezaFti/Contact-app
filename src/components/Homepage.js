@@ -5,6 +5,7 @@ import styles from "./homepage.module.css"
 import ContactDetails from "./ContactDetails";
 import MainPage from "./MainPage";
 
+
 function Homepage() {
 
     let keys = [];
@@ -32,6 +33,8 @@ function Homepage() {
 
 
     useEffect(() => {
+
+        document.title = 'AliReza Contact';
 
         for (let i = 0; i < localStorage.length; i++) {
 
@@ -73,7 +76,7 @@ function Homepage() {
         
         setSearchItem({ ...searchItem, text: e.target.value });
         theContacts = contacts.filter(contact => {
-            return contact.fullName.toLowerCase().includes(e.target.value);
+            return contact.fullName.toLowerCase().includes(e.target.value.toLowerCase());
         })
         setfavoriteState([])
         setunfavoriteState([])
